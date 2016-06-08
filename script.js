@@ -32,6 +32,7 @@ showApp.controller('mainController', function($scope, $http) {
     $http.get("./json/home_json.txt").success(function(response){
     	$scope.message = response.records;
     });
+    $scope.s = 'a';
     $scope.selectNav = function(val){
 			$scope.s = val;
 		}
