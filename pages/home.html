@@ -1,0 +1,46 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active">
+         <a class="img-link" href="http://fotomen.cn/" ><img class="car-img" src="./imgs/home/slide1.jpg" alt="First slide">
+         <div class="carousel-caption">FOTOMEN</div></a>
+      </div>
+      <div class="item">
+         <a class="img-link" href="http://weibo.com/ttarticle/p/show?id=2309351000123983720095816393"><img class="car-img" src="./imgs/home/slide2.jpg" alt="Second slide">
+         <div class="carousel-caption">高考，还有远比分数更重要的东西</div></a>
+      </div>
+      <div class="item">
+         <a class="img-link" href="http://weibo.com/ttarticle/p/show?id=2309351000123983724147514227"><img class="car-img" src="./imgs/home/slide3.jpg" alt="Third slide">
+         <div class="carousel-caption">“网红”树懒，到底是什么样的生物？</div></a>
+      </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+   <a class="carousel-control left" href="#myCarousel" 
+      data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel" 
+      data-slide="next">&rsaquo;</a>
+</div> 
+
+<section class="artical-list">
+	<a ng-repeat="x in message" href="{{x.url}}" class="artical-item">
+		<div class="cover">
+			<img class="artical-img" src="{{x.img}}">
+		</div>
+		<div class="cont">
+			<h3 class="artical-title">{{x.title}}</h3>
+			<p class="artical-desc">{{x.desc}}</p>
+		</div>
+	</a>
+</section>
+
+<script type="text/javascript">
+	$('#myCarousel').carousel({
+  		interval: 3000
+})
+</script>

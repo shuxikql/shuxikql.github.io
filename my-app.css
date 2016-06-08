@@ -1,0 +1,85 @@
+.container
+{
+	width:100%;
+	padding: 0;
+}
+.navbar-nav
+{
+	width: 100%;
+}
+.navbar-nav>li
+{
+	width: 25%;
+	text-align: center;
+	float: left;
+}
+.navbar-nav>li>a:hover, .navbar-nav>li>a:focus
+{
+	color: #0099FF;
+}
+.selected {
+    border-bottom: 2px solid #3399FF;
+}
+.selected>a
+{
+	color: #0099FF;
+}
+.carousel-caption
+{
+	font-size: 1.5em;
+}
+.artical-item
+{
+	display: block;
+	position: relative;
+	text-decoration: none;
+	overflow: hidden;
+	border-bottom: 1px solid #e2e2e2;
+	line-height: inherit;
+}
+.img-link
+{
+	text-decoration: none;
+}
+.cover
+{
+	float: left;
+	width: 25%;
+	margin: 2.5%;
+}
+.artical-img
+{
+	display: block;
+}
+.cont
+{
+	overflow: hidden;
+	margin: 0.5%;
+	height: 80px;
+	padding: 0.2% 0 0.2% 0;
+}
+.artical-title
+{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	margin: 1%;
+	font-size: 1.2em;
+	color: #808080;
+}
+img
+{
+	max-width: 100%;
+	height: auto;
+}
+.car-img
+{
+	margin: 0.2%;
+}
+.artical-desc
+{
+	font-size: 0.9em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #808080;
+}
