@@ -30,7 +30,7 @@
 <section class="artical-list">
 	<a ng-repeat="x in message" href="{{x.url}}" class="artical-item">
 		<div class="cover">
-			<img class="artical-img" src="{{x.img}}">
+			<img class="artical-img" ng-src="{{x.img}}">
 		</div>
 		<div class="cont">
 			<h3 class="artical-title">{{x.title}}</h3>

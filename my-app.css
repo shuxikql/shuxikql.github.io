@@ -24,6 +24,10 @@
 {
 	color: #0099FF;
 }
+.carousel slide
+{
+	margin-top: 10%;
+}
 .carousel-caption
 {
 	font-size: 1.5em;
