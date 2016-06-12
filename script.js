@@ -8,61 +8,103 @@ showApp.config(function($routeProvider){
 		})
 
 		.when('/shoufa', {
-			templateUrl : 'pages/shoufa.html',
+			templateUrl : 'pages/home.html',
 			controller : 'shoufaController'
 		})
 
 		.when('/dongtai', {
-			templateUrl : 'pages/dongtai.html',
+			templateUrl : 'pages/home.html',
 			controller : 'dongtaiController'
 		})
 
 		.when('/zhuankan', {
-			templateUrl : 'pages/zhuankan.html',
+			templateUrl : 'pages/home.html',
 			controller : 'zhuankanController'
 		});
 });
 
- 
+showApp.directive('loading', ['$http', function($http)
+{
+	return{
+		restrict: 'A',
+		link: function(scope, elm, attrs)
+		{
+			scope.isLoading = function()
+			{
+				return $http.pendingRequests.length > 0;
+			};
+
+			scope.$watch(scope.isLoading, function(v){
+				if(v){
+					elm.show();
+				}
+				else{
+					elm.hide();
+				}
+			});
+		}
+	};
+}]);
 // create the controller and inject Angular's $scope
 showApp.controller('mainController', function($scope, $http) {
- 
-    // create a message to display in our view
-    //$scope.message = 'Everyone come and see how good I look!';
     $http.get("./json/home_json.txt").success(function(response){
+    	$scope.id = response.id;
+    	$scope.imgs = response.headers;
     	$scope.message = response.records;
     });
+
     $scope.s = 'a';
     $scope.selectNav = function(val){
-			$scope.s = val;
+		$scope.s = val;
+	}
+
+	$scope.setClass = function(item, index){
+		if(index == 0){
+			return "item active";
 		}
+		return "item";
+	}
 });
 
 showApp.controller('shoufaController', function($scope,$http) {
- 
-    // create a message to display in our view
-    //$scope.message = 'Everyone come and see how good I look!hhh';
-    
     $http.get("./json/shoufa_json.txt").success(function(response){
+    	$scope.id = response.id;
+    	$scope.imgs = response.headers;
     	$scope.message = response.records;
     });
     
+    $scope.setClass = function(item, index){
+		if(index == 0){
+			return "item active";
+		}
+		return "item";
+	}
 });
 
 showApp.controller('dongtaiController', function($scope, $http) {
- 
-    // create a message to display in our view
-    //$scope.message = 'Everyone come and see how good I look!mmm';
     $http.get("./json/dongtai_json.txt").success(function(response){
+    	$scope.id = response.id;
+    	$scope.imgs = response.headers;
     	$scope.message = response.records;
     });
+    $scope.setClass = function(item, index){
+		if(index == 0){
+			return "item active";
+		}
+		return "item";
+	}
 });
 
 showApp.controller('zhuankanController', function($scope, $http) {
- 
-    // create a message to display in our view
-    //$scope.message = 'Everyone come and see how good I look!www';
     $http.get("./json/zhuankan_json.txt").success(function(response){
+    	$scope.id = response.id;
+    	$scope.imgs = response.headers;
     	$scope.message = response.records;
     });
+    $scope.setClass = function(item, index){
+		if(index == 0){
+			return "item active";
+		}
+		return "item";
+	}
 });

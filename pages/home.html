@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
    <!-- 轮播（Carousel）指标 -->
    <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -7,17 +7,9 @@
    </ol>   
    <!-- 轮播（Carousel）项目 -->
    <div class="carousel-inner">
-      <div class="item active">
-         <a class="img-link" href="http://fotomen.cn/" ><img class="car-img" src="./imgs/home/slide1.jpg" alt="First slide">
-         <div class="carousel-caption">FOTOMEN</div></a>
-      </div>
-      <div class="item">
-         <a class="img-link" href="http://weibo.com/ttarticle/p/show?id=2309351000123983720095816393"><img class="car-img" src="./imgs/home/slide2.jpg" alt="Second slide">
-         <div class="carousel-caption">高考，还有远比分数更重要的东西</div></a>
-      </div>
-      <div class="item">
-         <a class="img-link" href="http://weibo.com/ttarticle/p/show?id=2309351000123983724147514227"><img class="car-img" src="./imgs/home/slide3.jpg" alt="Third slide">
-         <div class="carousel-caption">“网红”树懒，到底是什么样的生物？</div></a>
+      <div ng-class='setClass(item, $index)' ng-repeat = "item in imgs">
+         <a class="img-link" ng-href="{{item.url}}" ><img class="car-img" ng-src="{{item.img}}">
+         <div class="carousel-caption">{{item.title}}</div></a>
       </div>
    </div>
    <!-- 轮播（Carousel）导航 -->
@@ -28,7 +20,7 @@
 </div> 
 
 <section class="artical-list">
-	<a ng-repeat="x in message" href="{{x.url}}" class="artical-item">
+	<a ng-repeat="x in message" ng-href="{{x.url}}" class="artical-item">
 		<div class="cover">
 			<img class="artical-img" ng-src="{{x.img}}">
 		</div>
@@ -38,9 +30,6 @@
 		</div>
 	</a>
 </section>
-
 <script type="text/javascript">
-	$('#myCarousel').carousel({
-  		interval: 3000
-})
+	$('#myCarousel').carousel('cycle');
 </script>
