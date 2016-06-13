@@ -23,37 +23,38 @@ showApp.config(function($routeProvider){
 		});
 });
 
-showApp.directive('loading', ['$http', function($http)
-{
-	return{
-		restrict: 'A',
-		link: function(scope, elm, attrs)
-		{
-			scope.isLoading = function()
-			{
-				return $http.pendingRequests.length > 0;
-			};
+// showApp.directive('loading', ['$http', function($http)
+// {
+// 	return{
+// 		restrict: 'A',
+// 		link: function(scope, elm, attrs)
+// 		{
+// 			scope.isLoading = function()
+// 			{
+// 				return $http.pendingRequests.length > 0;
+// 			};
 
-			scope.$watch(scope.isLoading, function(v){
-				if(v){
-					elm.show();
-				}
-				else{
-					elm.hide();
-				}
-			});
-		}
-	};
-}]);
-// create the controller and inject Angular's $scope
-showApp.controller('mainController', function($scope, $http) {
+// 			scope.$watch(scope.isLoading, function(v){
+// 				if(v){
+// 					elm.show();
+// 				}
+// 				else{
+// 					elm.hide();
+// 				}
+// 			});
+// 		}
+// 	};
+// }]);
+
+showApp.controller('mainController', function($scope, $http, $location) {
     $http.get("./json/home_json.txt").success(function(response){
     	$scope.id = response.id;
     	$scope.imgs = response.headers;
     	$scope.message = response.records;
     });
 
-    $scope.s = 'a';
+    $scope.s = $location.path();
+
     $scope.selectNav = function(val){
 		$scope.s = val;
 	}
@@ -108,3 +109,26 @@ showApp.controller('zhuankanController', function($scope, $http) {
 		return "item";
 	}
 });
+
+showApp.directive('loading', ['$http', function($http)
+{
+	return{
+		restrict: 'A',
+		link: function(scope, elm, attrs)
+		{
+			scope.isLoading = function()
+			{
+				return $http.pendingRequests.length > 0;
+			};
+
+			scope.$watch(scope.isLoading, function(v){
+				if(v){
+					elm.show();
+				}
+				else{
+					elm.hide();
+				}
+			});
+		}
+	};
+}]);
