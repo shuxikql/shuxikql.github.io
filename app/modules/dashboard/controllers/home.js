@@ -173,7 +173,7 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
 
     vm.home.Study = [
         {
-            title:"Font Awesome",
+            title:"Font",
             url:"http://www.bootcss.com/p/font-awesome/",
             img:'./images/home/font-awosome.jpg'
         },
