@@ -1,1 +1,0 @@
-{"headers":[{"url":"http://fotomen.cn/2016/06/franck-matellini/","img":"./imgs/shoufa/slide1.jpg","title":"伦敦日与夜的延时摄影"},{"url":"http://fotomen.cn/2016/06/weiguangjihua/","img":"./imgs/shoufa/slide2.jpg","title":"照片没拍好又不舍得删？"},{"url":"http://fotomen.cn/2016/05/51200/","img":"./imgs/shoufa/slide3.jpg","title":"传承经典黑白肖像：用灰度观察世界"}]}

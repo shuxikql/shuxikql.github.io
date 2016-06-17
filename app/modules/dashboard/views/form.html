@@ -1,0 +1,52 @@
+﻿<section class="content-header">
+    <h1>
+        Personal Info Form
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="#">Form</a></li>
+        <li class="active">Form</li>
+    </ol>
+</section>
+<section class="content">
+    <form data-ng-submit="vm.processForm();" name="vm.InfoForm">
+        <md-content class="autoScroll">
+           <!--
+            <select class="form-control" title="Category" data-ng-model="vm.message.dep">
+                <option ng-selected="selected" ng-value="none">Choose your Department</option>
+                <option ng-repeat="x in vm.Deps" ng-value="{{x.depname}}">{{x.depname}}</option>
+            </select>
+            -->
+            <md-input-container class="md-icon-float md-block">
+                <label>Name</label>
+                <md-icon class="fa fa-user"></md-icon>
+                <input type="text" required name="username" data-ng-model="vm.message.username">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Phone</label>
+                <md-icon class="fa fa-phone"></md-icon>
+                <input type="text" required name="phone" data-ng-model="vm.message.phone" pattern="[0-9]{10,12}">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Address</label>
+                <md-icon class="fa fa-envelope"></md-icon>
+                <input type="text" required name="address" data-ng-model="vm.message.address">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Saying something...</label>
+                <md-icon class="fa fa-gift"></md-icon>
+                <input type="text" required name="liuyan" data-ng-model="vm.message.liuyan">
+            </md-input-container>
+
+            <div class="pull-right">
+                <md-button class="md-raised md-primary" type="submit" ng-click="vm.processForm();">Submit<i class="fa fa-angle-double-right"></i></md-button>
+                <md-button class="md-raised md-warn" type="reset">Clear<i class="fa fa-trash-o"></i></md-button>
+            </div>
+        </md-content>
+    </form>
+    {{vm.message}}
+
+</section>

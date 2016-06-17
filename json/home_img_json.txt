@@ -1,1 +1,0 @@
-{"headers":[{"url":"http://fotomen.cn/","img":"./imgs/home/slide1.jpg","title":"FOTOMEN"},{"url":"http://weibo.com/ttarticle/p/show?id=2309351000123983720095816393","img":"./imgs/home/slide2.jpg","title":"高考，还有远比分数更重要的东西"},{"url":"http://weibo.com/ttarticle/p/show?id=2309351000123983724147514227","img":"./imgs/home/slide3.jpg","title":"网红树懒，到底是什么样的生物？"}]}

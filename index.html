@@ -1,43 +1,80 @@
-<!DOCTYPE html>
-<html ng-app = "showApp">
+﻿<!DOCTYPE html>
+<html>
 <head>
-	<title>资讯</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
-	<link rel="stylesheet" type="text/css" href="./bootstrap-3.3.6-dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./my-app.css">
-	<link rel="stylesheet" type="text/css" href="./amin.css">
-	<script src="./jquery-1.12.4.min.js"></script>
-	<script src="./angular/angular.min.js"></script>
-	<script src="./angular/angular-route.min.js"></script>
-	<script src="./bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-	<script src="./script.js"></script>
+  <title>Admin Demo</title>
+  <meta name="description" content="Admin"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+    <link href="plugins/angular-material/angular-material.min.css" rel="stylesheet" />
+    <!--CSS-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/nga.all.min.css" rel="stylesheet" />
+    <link href="css/themes.css" rel="stylesheet" />
+    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="plugins/bootstrap-slider/slider.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
+    <link href="plugins/owl-carousel/owl.transitions.css" rel="stylesheet" />
+    <link href="plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
 </head>
-<body ng-controller = "mainController">
-	<header>
-		<nav class = "navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<ul class="nav navbar-nav">
-					<li ng-class="{'selected': s == '/'}" ng-click = "selectNav('/')"><a href="#/">今日热点</a></li>
-					<li ng-class="{'selected': s == '/shoufa'}" ng-click = "selectNav('/shoufa')"><a href="#shoufa">小移首发</a></li>
-					<li ng-class="{'selected': s == '/dongtai'}" ng-click = "selectNav('/dongtai')"><a href="#dongtai">行业动态</a></li>
-					<li ng-class="{'selected': s == '/zhuankan'}" ng-click = "selectNav('/zhuankan')"><a href="#zhuankan">专刊</a></li>
-				</ul> 
-		</div>
-		</nav>
-	</header>
-	<!-- 页面加载动画效果 -->
-	<div id = "main" >
-		<!-- 页面加载动画效果 -->
-		<div id="loading" class="loading" data-loading>
-			<div class="rect1"></div>
-			<div class="rect2"></div>
-			<div class="rect3"></div>
-			<div class="rect4"></div>
-			<div class="rect5"></div>
-		</div> 
-		 <div ng-view>
-		 </div>
-	</div>
+<body data-ng-app="app" class="hold-transition sidebar-mini {{theme}} {{layout}}">
+    <!--Scripts-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugins/bootstrap-slider/bootstrap-slider.js"></script>
+
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-ui-router-min.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="plugins/knob/jquery.knob.js"></script>
+    <script src="plugins/Chart.min.js"></script>
+    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="js/angular-material.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-messages.min.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echart-theme.js"></script>
+    <script src="js/angular-flash.js"></script>
+    <script src="js/angular-echarts.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="js/smart-table.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+
+    <!--Common-->
+
+    <script src="app/common/config.js"></script>
+
+    <!--main app-->
+    <script src="app/app.js"></script>
+    <script src="app/common/appCtrl.js"></script>
+    <script src="app/services/apiService.js"></script>
+
+    <!--Login Module-->
+    <script src="app/modules/login/loginMgmt.js"></script>
+    <script src="app/modules/login/loginService.js"></script>
+    <script src="app/modules/login/loginCtrl.js"></script>
+
+    <!--Dashboard Module-->
+    <script src="app/modules/dashboard/dashboardApplication.js"></script>
+    <script src="app/modules/dashboard/dashboardService.js"></script>
+        <!-- Controllers -->
+        <script src="app/modules/dashboard/controllers/table.js"></script>
+        <script src="app/modules/dashboard/controllers/form.js"></script>
+        <script src="app/modules/dashboard/controllers/chart.js"></script>
+        <script src="app/modules/dashboard/controllers/contact.js"></script>
+        <script src="app/modules/dashboard/controllers/gallery.js"></script>
+        <script src="app/modules/dashboard/controllers/home.js"></script>
+        <script src="app/modules/dashboard/controllers/portfolio.js"></script>
+    <div flash-message="5000"></div>
+    <ui-view></ui-view>
+    
 </body>
 </html>
