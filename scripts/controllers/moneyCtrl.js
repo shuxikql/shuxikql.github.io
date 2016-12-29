@@ -1,0 +1,1 @@
+angular.module("sbAdminApp").controller("moneyCtrl",["$scope","$timeout",function($scope,$timeout){$scope.vm={},$scope.vm.money=0,$scope.vm.use=""}]);

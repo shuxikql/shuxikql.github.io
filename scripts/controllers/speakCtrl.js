@@ -1,0 +1,1 @@
+angular.module("sbAdminApp").controller("speakCtrl",["$scope","$timeout","$location",function($scope,$timeout,$location){$scope.list=[{id:1,desc:"不花没有必要的钱！"},{id:2,desc:"冲动是魔鬼！嗯，理性消费！"},{id:3,desc:"要不要考虑在家多做饭呢。。。"}]}]);
